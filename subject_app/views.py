@@ -89,13 +89,15 @@ class getStudentDetails(ListAPIView):
             print("Student Details",get_student)
 
             data.append({
-                "id": subject_app["id"],
+                #"id": subject_app["id"],
                 "subject_name": subject_app["subject_name"],
                 "marks": subject_app["marks"],
                 #"age": get_student[0]["age"],
+		"first_name":get_student[0]["first_name"],
+		"last_name":get_student[0]["last_name"],
                 #"date_of_birth": get_student[0]["date_of_birth"],
                 #"Gender_Choice": get_student[0]["Gender_Choice"],
-                "student_id": get_student[0]["id"]
+                "id": get_student[0]["id"]
             })
 
         return Response(data, status.HTTP_200_OK)
